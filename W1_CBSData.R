@@ -17,4 +17,4 @@ municipalities %>%
   theme(legend.title = element_blank()) + 
   ggtitle(
         label = "Celebrating my graduation", 
-        subtitle = "Dutch women age 24-25 who graduated with masters' degree in 2019-2020")
+        subtitle = "Dutch women ages 24-25 who graduated with masters' degree in 2019-2020")
