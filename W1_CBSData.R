@@ -8,7 +8,7 @@ W1_Someonelikeme <- read.csv("~/Library/Mobile Documents/com~apple~CloudDocs/202
 #Municipalities CBS
 municipalities <- st_read("https://geodata.nationaalgeoregister.nl/cbsgebiedsindelingen/wfs?request=GetFeature&service=WFS&version=2.0.0&typeName=cbs_gemeente_2017_gegeneraliseerd&outputFormat=json")
 
-municipalities %>%  
+Celebrating_graduation <- municipalities %>%  
   left_join(W1_Someonelikeme, by = c(statcode = "RegioS"))  %>% 
   filter(Gediplomeerden_1 > 1) %>% 
   ggplot() + 
@@ -16,5 +16,9 @@ municipalities %>%
   theme_void() + 
   theme(legend.title = element_blank()) + 
   ggtitle(
-        label = "Celebrating my graduation", 
+        label = "Celebrating graduation", 
         subtitle = "Dutch women ages 24-25 who graduated with masters' degree in 2019-2020")
+
+
+ggsave("Celebrate2021.png", Celebrating_graduation)
+
